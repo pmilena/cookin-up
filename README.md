@@ -1,40 +1,129 @@
-# cookin-up
+![Project Logo](./src/assets/imagens/logo.svg)
 
-This template should help get you started developing with Vue 3 in Vite.
+## Project Description
 
-## Recommended IDE Setup
+Cookin'UP is an innovative platform for cooking enthusiasts to explore and share recipes. Discover new ideas for everyday dishes, learn how to use ingredients within your reach, and awaken the chef within you!  
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+This project was developed to deepen my knowledge of the Vue 3 framework, reinforce good frontend development practices, and create an interactive application.
 
-## Type Support for `.vue` Imports in TS
+## Key Features
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+- **Recipe Exploration:** Browse a collection of categorized recipes for easy access.
+- **Recipe Sharing:** Post your own creations and share them with the community.
+- **Smart Search:** Find recipes quickly using ingredients, dish names, or categories.
+- **User-Friendly Interface:** Intuitive design for a pleasant and efficient user experience.
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## Technologies Used
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+- **Frontend:** Vue 3, HTML5, CSS3, JavaScript/TypeScript
 
-## Customize configuration
+## Prerequisites
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Before starting, make sure you have installed:
 
-## Project Setup
+- [Node.js](https://nodejs.org/) (version 16 or higher)
+- [npm](https://www.npmjs.com/) (default package manager)
 
-```sh
-npm install
-```
+Optional (if you prefer to use Yarn):
 
-### Compile and Hot-Reload for Development
+- [Yarn](https://yarnpkg.com/) (alternative package manager)
 
-```sh
-npm run dev
-```
+## How to Run the Project
 
-### Type-Check, Compile and Minify for Production
+1. Clone the repository:
 
-```sh
-npm run build
-```
+   ```bash
+   git clone [Your repository URL]
+   cd cookin-up
+
+
+2. Install dependencies:
+
+   **With npm:**
+   ```bash
+   npm install
+   ```
+
+   **Or, if you prefer, with Yarn:**
+   ```bash
+   yarn install
+   ```
+
+3. Run the project:
+
+    **With npm:**
+   ```bash
+   npm run serve
+   ```
+
+   **With Yarn:**
+   ```bash
+   yarn serve
+   ```
+
+***
+![Logo do projeto](./src/assets/imagens/logo.svg)
+
+## Descrição do Projeto
+
+Cookin'UP é uma plataforma inovadora para entusiastas da culinária explorarem e compartilharem receitas. Descubra novas ideias para pratos diários, aprenda a usar ingredientes ao seu alcance e desperte o chef que há em você!
+
+Este projeto foi desenvolvido com o objetivo de aprofundar meus conhecimentos no framework (Vue 3), reforçar boas práticas de desenvolvimento frontend e criar uma aplicação interativa.
+
+## Funcionalidades Principais
+
+- **Exploração de Receitas:** Navegue por uma coleção de receitas categorizadas para fácil acesso.
+- **Compartilhamento de Receitas:** Publique suas próprias criações e compartilhe-as com a comunidade.
+- **Busca Inteligente:** Encontre receitas rapidamente usando ingredientes, nomes de pratos ou categorias.
+- **Interface Amigável:** Design intuitivo para uma experiência de usuário agradável e eficiente.
+
+## Tecnologias Utilizadas
+
+- **Frontend:** Vue 3, HTML5, CSS3, JavaScript/TypeScript
+
+## Pré-requisitos
+
+Antes de começar, certifique-se de ter instalado:
+
+- [Node.js](https://nodejs.org/) (versão 16 ou superior)
+- [npm](https://www.npmjs.com/) (gerenciador de pacotes padrão)
+
+Opcional (se preferir usar Yarn):
+
+- [Yarn](https://yarnpkg.com/) (gerenciador de pacotes alternativo)
+
+## Como Executar o Projeto
+
+1. Clone o repositório:
+
+   ```bash
+   git clone [URL do seu repositório]
+   cd cookin-up
+   ```
+
+2. Instale as dependências:
+
+   **Com npm:**
+   ```bash
+   npm install
+   ```
+
+   **Ou, se preferir, com Yarn:**
+   ```bash
+   yarn install
+   ```
+
+3. Execute o projeto:
+
+   **Com npm:**
+   ```bash
+   npm run serve
+   ```
+
+   **Com Yarn:**
+   ```bash
+   yarn serve
+   ```
+
+   
+
