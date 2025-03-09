@@ -16,10 +16,12 @@ export default {
 
       if (this.selecionado) {
         this.$emit("adicionarIngrediente", this.ingrediente);
+      } else {
+        this.$emit("removerDaLista", this.ingrediente);
       }
     },
   },
-  emits: ["adicionarIngrediente"],
+  emits: ["adicionarIngrediente", "removerDaLista"],
 };
 </script>
 

@@ -9,6 +9,14 @@ export default {
       ingredientes: [] as string[],
     };
   },
+  methods: {
+    adicionarIngrediente(ingrediente: string) {
+      this.ingredientes.push(ingrediente);
+    },
+    removerDaLista() {
+      this.ingredientes.pop();
+    },
+  },
 };
 </script>
 
@@ -16,9 +24,8 @@ export default {
   <main class="conteudo-principal">
     <SuaLista :ingredientes="ingredientes" />
     <SelecionarIngredientes
-      @adicionar-ingrediente="
-        $emit('adicionarIngrediente', ingredientes.push($event))
-      "
+      @adicionar-ingrediente="adicionarIngrediente"
+      @remover-da-lista="removerDaLista"
     />
   </main>
 </template>
