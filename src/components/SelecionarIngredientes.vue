@@ -5,6 +5,7 @@ import CardCategoria from "./CardCategoria.vue";
 import BotaoPrincipal from "./BotaoPrincipal.vue";
 
 export default {
+  name: "SelecionarIngredientes",
   data() {
     return {
       categorias: [] as ICategoria[],
@@ -38,7 +39,7 @@ export default {
       *Atenção: consideramos que você tem em casa sal, pimenta e água.
     </p>
 
-    <BotaoPrincipal @click="$emit('mostrarReceita')" />
+    <BotaoPrincipal texto="Buscar Receitas!" @click="$emit('mostrarReceita')" />
   </section>
 </template>
 

@@ -25,23 +25,30 @@ export default {
     mostrarReceita(pagina: Pagina) {
       this.conteudo = "MostrarReceitas";
     },
+    editarReceitas(pagina: Pagina) {
+      this.conteudo = "SelecionarIngredientes";
+    },
   },
 };
 </script>
 
 <template>
   <main class="conteudo-principal">
-    <SuaLista
-      :ingredientes="ingredientes"
-      v-if="conteudo === 'SelecionarIngredientes'"
-    />
-    <SelecionarIngredientes
-      v-if="conteudo === 'SelecionarIngredientes'"
-      @adicionar-ingrediente="adicionarIngrediente"
-      @remover-da-lista="removerDaLista"
-      @mostrar-receita="mostrarReceita"
-    />
-    <MostrarReceita v-else-if="conteudo === 'MostrarReceitas'" />
+    <SuaLista :ingredientes="ingredientes" />
+
+    <KeepAlive include="SelecionarIngredientes">
+      <SelecionarIngredientes
+        v-if="conteudo === 'SelecionarIngredientes'"
+        @adicionar-ingrediente="adicionarIngrediente"
+        @remover-da-lista="removerDaLista"
+        @mostrar-receita="mostrarReceita"
+      />
+      <MostrarReceita
+        v-else-if="conteudo === 'MostrarReceitas'"
+        @editar-receitas="editarReceitas"
+        :ingredientes="ingredientes"
+      />
+    </KeepAlive>
   </main>
 </template>
 

@@ -3,17 +3,32 @@ import { ObterReceita } from "@/http";
 import type IReceita from "@/interfaces/IReceita";
 import CardReceita from "./CardReceita.vue";
 import type { PropType } from "vue";
+import BotaoPrincipal from "./BotaoPrincipal.vue";
+import { itensDeLista1EstaoEmLista2 } from "@/operacoes/listas";
 
 export default {
+  props: {
+    ingredientes: { type: Array as PropType<String[]>, required: true },
+  },
   data() {
     return {
       receitasEncontradas: [] as IReceita[],
     };
   },
   async created() {
-    this.receitasEncontradas = await ObterReceita();
+    const receitas = await ObterReceita();
+
+    this.receitasEncontradas = receitas.filter((receita) => {
+      const possoFazerReceita = itensDeLista1EstaoEmLista2(
+        receita.ingredientes,
+        this.ingredientes
+      );
+
+      return possoFazerReceita;
+    });
   },
-  components: { CardReceita },
+  components: { CardReceita, BotaoPrincipal },
+  emits: ["editarReceitas"],
 };
 </script>
 <template>
@@ -29,12 +44,13 @@ export default {
           Veja as opções de receitas que encontramos com os ingredientes que
           você tem por aí!
         </p>
+
+        <ul class="receitas">
+          <li v-for="receita in receitasEncontradas" :key="receita.nome">
+            <CardReceita :receita="receita" />
+          </li>
+        </ul>
       </div>
-      <ul class="receitas">
-        <li v-for="receita in receitasEncontradas" :key="receita.nome">
-          <CardReceita :receita="receita" />
-        </li>
-      </ul>
     </div>
     <div v-else class="receitas-nao-encontradas">
       <p class="paragrafo-lg receitas-nao-encontradas__info">
@@ -47,6 +63,7 @@ export default {
         alt="Desenho de um ovo quebrado. A gema tem um rosto com uma expressão triste."
       />
     </div>
+    <BotaoPrincipal texto="Editar lista" @click="$emit('editarReceitas')" />
   </section>
 </template>
 
