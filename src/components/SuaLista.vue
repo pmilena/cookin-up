@@ -3,10 +3,8 @@ import Tag from "./Tag.vue";
 
 export default {
   components: { Tag },
-  data() {
-    return {
-      ingredientes: ["Alho", "Manteiga", "Orégano"],
-    };
+  props: {
+    ingredientes: { type: Array as () => string[], required: true },
   },
 };
 </script>

@@ -6,14 +6,16 @@ import Tag from "./Tag.vue";
 export default {
   components: { SelecionarIngredientes, Tag, SuaLista },
   data() {
-    return {};
+    return {
+      ingredientes: ["Alho", "Manteiga", "Orégano"],
+    };
   },
 };
 </script>
 
 <template>
   <main class="conteudo-principal">
-    <SuaLista />
+    <SuaLista :ingredientes="ingredientes" />
     <SelecionarIngredientes />
   </main>
 </template>
