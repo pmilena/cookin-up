@@ -4,7 +4,7 @@ import Tag from "./Tag.vue";
 export default {
   components: { Tag },
   props: {
-    ingredientes: { type: Array as () => string[], required: true },
+    ingredientes: { type: [] as string[], required: true },
   },
 };
 </script>

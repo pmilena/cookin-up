@@ -6,7 +6,7 @@ export default {
   components: { SelecionarIngredientes, SuaLista },
   data() {
     return {
-      ingredientes: ["Alho", "Manteiga", "Orégano"],
+      ingredientes: [] as string[],
     };
   },
 };
@@ -15,7 +15,11 @@ export default {
 <template>
   <main class="conteudo-principal">
     <SuaLista :ingredientes="ingredientes" />
-    <SelecionarIngredientes />
+    <SelecionarIngredientes
+      @adicionar-ingrediente="
+        $emit('adicionarIngrediente', ingredientes.push($event))
+      "
+    />
   </main>
 </template>
 
