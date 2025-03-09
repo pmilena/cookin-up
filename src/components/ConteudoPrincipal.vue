@@ -1,12 +1,16 @@
 <script lang="ts">
+import MostrarReceita from "./MostrarReceita.vue";
 import SelecionarIngredientes from "./SelecionarIngredientes.vue";
 import SuaLista from "./SuaLista.vue";
 
+type Pagina = "SelecionarIngredientes" | "MostrarReceitas";
+
 export default {
-  components: { SelecionarIngredientes, SuaLista },
+  components: { SelecionarIngredientes, SuaLista, MostrarReceita },
   data() {
     return {
       ingredientes: [] as string[],
+      conteudo: "SelecionarIngredientes" as Pagina,
     };
   },
   methods: {
@@ -18,17 +22,26 @@ export default {
         (iLista) => ingrediente !== iLista
       );
     },
+    mostrarReceita(pagina: Pagina) {
+      this.conteudo = "MostrarReceitas";
+    },
   },
 };
 </script>
 
 <template>
   <main class="conteudo-principal">
-    <SuaLista :ingredientes="ingredientes" />
+    <SuaLista
+      :ingredientes="ingredientes"
+      v-if="conteudo === 'SelecionarIngredientes'"
+    />
     <SelecionarIngredientes
+      v-if="conteudo === 'SelecionarIngredientes'"
       @adicionar-ingrediente="adicionarIngrediente"
       @remover-da-lista="removerDaLista"
+      @mostrar-receita="mostrarReceita"
     />
+    <MostrarReceita v-else-if="conteudo === 'MostrarReceitas'" />
   </main>
 </template>
 
