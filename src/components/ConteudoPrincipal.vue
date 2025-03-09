@@ -13,8 +13,10 @@ export default {
     adicionarIngrediente(ingrediente: string) {
       this.ingredientes.push(ingrediente);
     },
-    removerDaLista() {
-      this.ingredientes.pop();
+    removerDaLista(ingrediente: string) {
+      this.ingredientes = this.ingredientes.filter(
+        (iLista) => ingrediente !== iLista
+      );
     },
   },
 };
